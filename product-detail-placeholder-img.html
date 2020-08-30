@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- FAVICON-->
+    <link rel="apple-touch-icon" sizes="180x180" href="DFTerminal/media/DFTerminal/Images/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="DFTerminal/media/DFTerminal/Images/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="DFTerminal/media/DFTerminal/Images/favicon-16x16.png" sizes="16x16"/>
+    <link rel="manifest" href="DFTerminal/media/DFTerminal/Images/manifest.json"/>
+    <title>DF Terminal</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"/>
+    <link rel="stylesheet" href="css/icons.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <!-- FOR TEMPLATE DEV ONLY - DO NOT USE IN KENTICO -->
+    <script src="js/csi.min.js"></script>
+</head>
+<body class="stripes-bg">
+<!-- HEADER -->
+<header>
+    <!-- Header when logged in -->
+    <nav class="navbar-logged-in">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-6 no-padding">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Uživatelské údaje</a>
+                        </li>
+                        <li class="nav-item hidden-md-down">
+                            <a class="nav-link" href="#">Proběhlé objednávky</a>
+                        </li>
+                        <li class="nav-item hidden-md-down">
+                            <a class="nav-link" href="#">Pohledávky</a>
+                        </li>
+                        <li class="nav-item hidden-md-down">
+                            <a class="nav-link" href="#">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 no-padding">
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item d-none d-sm-none d-md-block">
+                            <span class="username">Jméno Příjmení</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><strong>Odhlásit</strong></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Main header with logo, seach-form and cart -->
+    <nav class="navbar navbar-expand-lg navbar-toggleable-md navbar-light navbar-main fixed-top no-padding stripes-bg">
+        <div class="container no-padding">
+            <button class="navbar-toggler navbar-toggler-left ml-3 collapsed" type="button" data-toggle="collapse"
+                    data-target="#productNavigation" aria-controls="productNavigation"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-menu"></span>
+            </button>
+            <a class="navbar-brand order-md-1" href="#">
+                <img class="img-fluid" src="DFTerminal/media/DFTerminal/Images/DF-Logo_big.png" alt=""/>
+            </a>
+            <div class="df-cart order-md-3 mr-3 not-empty">
+                <a href="#" class="btn btn-primary btn-red d-flex align-items-center">
+
+                    <div class="float-left">
+                        <i class="icon-basket"></i>
+                    </div>
+                    <div class="float-right d-flex flex-column">
+                        <span class="text-right total-price">12 896 Kč</span>
+                        <span class="text-right weight">156 kg</span>
+                    </div>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse order-md-2 search-form-wrapper">
+                <div class="form-inline search-form">
+                    <div class="input-group my-lg-0">
+                        <span class="input-group-addon">
+                            <i class="icon-lupa"></i>
+                        </span>
+                        <input type="search" class="form-control" placeholder="Co hledáte?">
+                    </div>
+                    <input type="submit" value="Hledat" class="btn btn-primary btn-blue"/>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Product navigation -->
+    <nav class="navbar navbar-expand-lg navbar-toggleable-md navbar-products fixed-top stripes-bg no-padding">
+        <div class="container no-padding product-categories-wrapper">
+            <div class="collapse navbar-collapse" id="productNavigation">
+                <div class="mobile-search d-lg-none"></div>
+                <ul class="navbar-nav product-categories-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="all-products.html">Vše</a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">
+                            Oleje a maziva
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="container product-categories oils">
+                                <ul class="product-categories-list oils row">
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Motorové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Převodové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Plastická maziva</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">
+                            Provozní kapaliny
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="container product-categories fluids">
+                                <ul class="product-categories-list fluids row list-unstyled">
+                                    <li class="col-12 col-sm-4 col-lg-2">
+                                        <a class="main-category" href="#">Zimní ostřikovače</a>
+                                        <a class="sub-category d-block" href="#">Zimní směsi -10°C</a>
+                                        <a class="sub-category d-block" href="#">Zimní směsi -15°C</a>
+                                        <a class="sub-category d-block" href="#">Zimní směsi -18°C</a>
+                                        <a class="sub-category d-block" href="#">Zimní směsi -19°C</a>
+                                        <a class="sub-category d-block" href="#">Zimní směsi -20°C</a>
+                                        <a class="sub-category d-block" href="#">Zimní směsi -21°C</a>
+                                        <a class="sub-category d-block" href="#">Zimní směsi -22°C</a>
+                                        <a class="sub-category d-block" href="#">Zimní směsi -23°C</a>
+                                    </li>
+                                    <li class="col-12 col-sm-4 col-lg-2">
+                                        <a class="main-category" href="#">Letní ostřikovače</a>
+                                        <a class="sub-category d-block" href="#">Letní směsi</a>
+                                        <a class="sub-category d-block" href="#">Letní koncentráty</a>
+                                    </li>
+                                    <li class="col-12 col-sm-4 col-lg-2">
+                                        <a class="main-category" href="#">Chladící kapaliny</a>
+                                        <a class="sub-category d-block" href="#">EKO</a>
+                                        <a class="sub-category d-block" href="#">G11</a>
+                                        <a class="sub-category d-block" href="#">G12+</a>
+                                        <a class="sub-category d-block" href="#">G13</a>
+                                        <a class="sub-category d-block" href="#">G48</a>
+                                        <a class="sub-category d-block" href="#">Antigel</a>
+                                        <a class="sub-category d-block" href="#">Maxigel</a>
+                                        <a class="sub-category d-block" href="#">Stabil</a>
+                                        <a class="sub-category d-block" href="#">Thermofreeze</a>
+                                        <a class="sub-category d-block" href="#">Ostatní</a>
+                                    </li>
+                                    <li class="col-12 col-sm-4 col-lg-2">
+                                        <a class="main-category" href="#">Brzdové kapaliny</a>
+                                        <a class="sub-category d-block" href="#">DOT 3</a>
+                                        <a class="sub-category d-block" href="#">DOT 4</a>
+                                        <a class="sub-category d-block" href="#">DOT 5.1</a>
+                                    </li>
+                                    <li class="col-12 col-sm-4 col-lg-2">
+                                        <a class="main-category" href="#">Aditiva</a>
+                                        <a class="sub-category d-block" href="#">AdBlue</a>
+                                        <a class="sub-category d-block" href="#">Benzín aditiva</a>
+                                        <a class="sub-category d-block" href="#">Diesel aditiva</a>
+                                        <a class="sub-category d-block" href="#">Čističe paliv.soust. benzín</a>
+                                        <a class="sub-category d-block" href="#">Čističe paliv.soust. diesel</a>
+                                        <a class="sub-category d-block" href="#">Čističe karburátoru</a>
+                                    </li>
+                                    <li class="col-12 col-sm-4 col-lg-2">
+                                        <a class="main-category" href="#">Destilovaná voda</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Autopříslušenství</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Autodoplňky</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Autokosmetika</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Servisní přípravky</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Doplňkový sortiment</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- BREADCRUMBS -->
+    <nav class="df-breadcrumbs stripes-bg d-none d-md-block">
+        <div class="container no-padding">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="home" href="homepage.html"></a></li>
+                <li class="breadcrumb-item"><a href="#">Oleje a maziva</a></li>
+                <li class="breadcrumb-item"><a href="#">Motorové oleje</a></li>
+                <li class="breadcrumb-item"><a href="#">Viskozita 10W-30</a></li>
+                <li class="breadcrumb-item active">Nějaký delší název zboží</li>
+            </ol>
+        </div>
+    </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="content-wrapper product-detail">
+    <!-- Product detail -->
+    <section class="product-detail stripes-bg">
+        <div class="container pb-3">
+            <div class="row">
+                <div class="col-12 col-md-4 pt-4">
+                    <ul class="list-unstyled legend">
+                        <li>
+                            <span class="legend-badge goods-like"></span>
+                        </li>
+                        <li>
+                            <span class="legend-badge goods-taken"></span>
+                        </li>
+                        <li>
+                            <span class="legend-badge sale"></span>
+                        </li>
+                        <li>
+                            <span class="legend-badge new"></span>
+                        <li>
+                            <span class="legend-badge sold-out"></span>
+                        </li>
+                        <li>
+                            <span class="legend-badge recommended"></span>
+                        </li>
+                        <li>
+                            <span class="legend-badge in-stock"></span>
+                        </li>
+                    </ul>
+                    <a class="d-block product-detail-img link-disabled" aria-disabled="true" href="#" data-toggle="modal" data-target=".img-fullsize">
+                        <img class="mx-auto d-block img-fluid" src="DFTerminal/media/DFTerminal/Images/img-placeholder.png" alt=""/>
+                    </a>
+                    <div class="like-badge">
+                        <label class="d-none d-md-flex flex-md-column">Oblíbené zboží:</label>
+                        <button class="btn btn-primary btn-like float-right mr-3 mr-md-auto" data-productId="1234567">&#9733;</button>
+                    </div>
+                </div>
+                <div class="col-12 col-md-8">
+                    <h1>Nějaký delší název zboží</h1>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <ul class="list-group product-detail-list">
+                                <li class="list-group-item">Kód:<span class="float-right">1234567</span></li>
+                                <li class="list-group-item">Výrobce:<span class="float-right">Jméno výrobce</span></li>
+                                <li class="list-group-item">Cena/kus bez DPH:<span class="float-right text-bold">1 234 Kč</span></li>
+                                <li class="list-group-item">Cena/litr bez DPH:<span class="float-right text-bold">123 Kč</span></li>
+                                <li class="list-group-item">Sleva:<span class="float-right">30 %</span></li>
+                                <li class="list-group-item">Cena/kus bez DPH po slevě:<span class="float-right text-bold">876 Kč</span></li>
+                                <li class="list-group-item">Cena/litr bez DPH po slevě:<span class="float-right text-bold">87 Kč</span></li>
+                                <li class="list-group-item">Skladem:
+                                    <span class="float-right">
+                                        <button class="btn btn-primary btn-request-stock" data-productId="1234567">
+                                            <span class="badge">?</span>
+                                        </button>
+                                        <span class="in-stock">98</span> <span class="unit">ks</span>
+                                    </span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="d-md-flex align-content-between flex-md-wrap col-12 col-md-6">
+                            <ul class="list-group product-detail-list">
+                                <li class="list-group-item">Hmotnost:<span class="float-right">12 kg</span></li>
+                                <li class="list-group-item">EAN:<span class="float-right">123456789</span></li>
+                                <li class="list-group-item">Počet kusů v kartonu:<span class="float-right">60 ks</span></li>
+                                <li class="list-group-item">Počet kartonů na paletě:<span class="float-right">600 ks</span></li>
+                            </ul>
+                            <div class="d-flex pb-2">
+                                <a href="#" class="btn btn-primary btn-blue btn-sm mr-2">Dokumentace</a>
+                                <a href="#" class="btn btn-primary btn-blue btn-sm">Bezpečnostní list</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="product-description mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                            dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                            mollit anim id est laborum.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="btn-group unit-selector mt-3 mb-4" data-toggle="buttons">
+                                <label class="btn btn-primary btn-blue">
+                                    <input type="radio" name="unit" autocomplete="off">10 lt
+                                </label>
+                                <label class="btn btn-primary btn-blue active">
+                                    <input type="radio" name="unit" autocomplete="off" checked>20 lt
+                                </label>
+                                <label class="btn btn-primary btn-blue">
+                                    <input type="radio" name="unit" autocomplete="off">100 lt
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <label for="product-quantity" class="d-md-flex flex-md-column">Objednáno kartonů:</label>
+                            <div class="input-group product-quantity-selector w-25 d-inline-flex">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary btn-blue btn-small btn-number btn-decrease"
+                                            type="button" data-type="minus" data-field="quantity">
+                                        <i class="icon-arrow icon-flipped"></i>
+                                    </button>
+                                </span>
+                                <input id="product-quantity" name="quantity" class="form-control input-number text-right" value="0" min="1" max="100"/>
+                                <span class="input-group-addon addon-inline quantity-suffix">kar</span>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary btn-blue btn-small btn-number btn-increase"
+                                            type="button" data-type="plus" data-field="quantity">
+                                        <i class="icon-arrow"></i>
+                                    </button>
+                                </span>
+                            </div>
+                            <input type="submit" value="Vložit do košíku" class="btn btn-primary btn-red mt-4 mt-sm-0 mx-auto d-block d-sm-inline"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for full-size product image -->
+        <div class="modal img-fullsize" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <img class="mx-auto d-block" src="DFTerminal/media/DFTerminal/Images/spray-fullwidth.png" alt=""/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customers bought -->
+    <section class="customers-bought stripes-bg">
+        <div class="container pb-5">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="middle-line">Zákazníci také zakoupili</h2>
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="card-deck">
+                    <div data-include="partials/product-box-customers-bought.html"></div>
+                    <div data-include="partials/product-box-customers-bought-placeholder.html"></div>
+                    <div data-include="partials/product-box-customers-bought.html"></div>
+                    <div data-include="partials/product-box-customers-bought-placeholder.html"></div>
+                    <div data-include="partials/product-box-customers-bought.html"></div>
+                    <div data-include="partials/product-box-customers-bought.html"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <!--Footer homepage-->
+    <section class="footer-homepage">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-4 contact">
+                    <h3 class="text-uppercase">Kontakt</h3>
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="icon-location"></i>
+                            <span>DF Partner s.r.o., č.p. 165, 736 15 Neubuz</span>
+                        </li>
+                        <li>
+                            <i class="icon-phone"></i>
+                            <span>+420 575 571 111</span>
+                        </li>
+                        <li>
+                            <i class="icon-mail"></i>
+                            <span>xxxx@xxxx.cz</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-12 col-lg-4 map-link">
+                    <h3 class="text-uppercase">Mapa Stránek</h3>
+                    <ul class="list-unstyled selector">
+                        <li><a href="user-data.html">Uživatelské údaje</a></li>
+                        <li><a href="orders-completed.html">Proběhlé objednávky</a></li>
+                        <li><a href="#">Pohledávky</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                        <li><a href="#">Ke stažení</a></li>
+                        <li><a href="#" data-toggle="modal" data-target=".bd-example-modal-lg">Obchodní podmínky</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12 col-lg-4 newsletter">
+                    <h3 class="text-uppercase">Odběr novinek</h3>
+                    <p>Zaregistrujte se k odběru našeho zpravodaje a budeme vám posílat novinky a zajímavosti ze
+                        světa DF Partner.</p>
+                    <div class="form-group row">
+                        <div class="col-lg-12 col-xl-8">
+                            <input class="form-control" type="email" placeholder="Vaše emailová adresa"/>
+                        </div>
+                        <div class="col-lg-12 col-xl-4">
+                            <input class="btn btn-primary btn-blue btn-block" type="submit" value="Přihlásit"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Footer logo-->
+    <section class="footer-logo">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <a href="#">
+                        <img class="img-responsive" src="DFTerminal/media/DFTerminal/Images/DF-Logo_small.png" alt=""/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Footer copyright-->
+    <section class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <p>copyright © 2017 DF Partner, všechna práva vyhrazena</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+<script src="js/jquery-3.2.1.slim.min.js"></script>
+<script src="js/popper.1.11.0.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Only for homepage.html -->
+<script src="js/carousel.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

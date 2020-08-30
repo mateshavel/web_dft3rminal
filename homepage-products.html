@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <!-- FAVICON-->
+    <link rel="apple-touch-icon" sizes="180x180" href="DFTerminal/media/DFTerminal/Images/apple-touch-icon.png"/>
+    <link rel="icon" type="image/png" href="DFTerminal/media/DFTerminal/Images/favicon-32x32.png" sizes="32x32"/>
+    <link rel="icon" type="image/png" href="DFTerminal/media/DFTerminal/Images/favicon-16x16.png" sizes="16x16"/>
+    <link rel="manifest" href="DFTerminal/media/DFTerminal/Images/manifest.json"/>
+    <title>DF Terminal</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css"/>
+    <link rel="stylesheet" href="css/icons.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <!-- FOR TEMPLATE DEV ONLY - DO NOT USE IN KENTICO -->
+    <script src="js/csi.min.js"></script>
+</head>
+<body class="stripes-bg">
+<!-- HEADER -->
+<header>
+    <!-- Header when logged in -->
+    <nav class="navbar-logged-in">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-6 no-padding">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="user-data.html">Uživatelské údaje</a>
+                        </li>
+                        <li class="nav-item hidden-md-down">
+                            <a class="nav-link" href="orders-completed.html">Proběhlé objednávky</a>
+                        </li>
+                        <li class="nav-item hidden-md-down">
+                            <a class="nav-link" href="receivables.html">Pohledávky</a>
+                        </li>
+                        <li class="nav-item hidden-md-down">
+                            <a class="nav-link" href="contact.html">Kontakt</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-6 no-padding">
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item d-none d-sm-none d-md-block">
+                            <span class="username">Jméno Příjmení</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><strong>Odhlásit</strong></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Main header with logo, seach-form and cart -->
+    <nav class="navbar navbar-expand-lg navbar-toggleable-md navbar-light navbar-main fixed-top no-padding stripes-bg">
+        <div class="container no-padding">
+            <button class="navbar-toggler navbar-toggler-left ml-3 collapsed" type="button" data-toggle="collapse"
+                    data-target="#productNavigation" aria-controls="productNavigation"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-menu"></span>
+            </button>
+            <a class="navbar-brand order-md-1" href="#">
+                <img class="img-fluid" src="DFTerminal/media/DFTerminal/Images/DF-Logo_big.png" alt=""/>
+            </a>
+            <div class="df-cart order-md-3 mr-3 empty">
+                <a href="#" class="btn btn-primary btn-white d-flex align-items-center">
+                    <div class="float-left">
+                        <i class="icon-basket"></i>
+                    </div>
+                    <div class="float-right d-flex flex-column">
+                        <span class="text-right total-price"></span>
+                        <span class="text-right weight"></span>
+                    </div>
+                </a>
+            </div>
+            <div class="collapse navbar-collapse order-md-2 search-form-wrapper">
+                <div class="form-inline search-form">
+                    <div class="input-group my-lg-0">
+                        <span class="input-group-addon">
+                            <i class="icon-lupa"></i>
+                        </span>
+                        <input type="search" class="form-control" placeholder="Co hledáte?">
+                    </div>
+                    <input type="submit" value="Hledat" class="btn btn-primary btn-blue"/>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Product navigation -->
+    <nav class="navbar navbar-expand-lg navbar-toggleable-md navbar-products fixed-top stripes-bg no-padding">
+        <div class="container no-padding product-categories-wrapper">
+            <div class="collapse navbar-collapse" id="productNavigation">
+                <div class="mobile-search d-lg-none"></div>
+                <ul class="navbar-nav product-categories-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="all-products.html">Vše</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">
+                            Oleje a maziva
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="container product-categories oils">
+                                <ul class="product-categories-list oils row">
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="products-category.html">Motorové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="products-subcategory.html">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Převodové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Plastická maziva</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">
+                            Provozní kapaliny
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="container product-categories fluids">
+                                <ul class="product-categories-list fluids row">
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="products-category.html">Motorové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="products-subcategory.html">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Převodové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Plastická maziva</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Autopříslušenství</a>
+                        <div class="dropdown-menu">
+                            <div class="container product-categories oils">
+                                <ul class="product-categories-list accessories row">
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="products-category.html">Motorové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="products-subcategory.html">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Převodové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Plastická maziva</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Autodoplňky</a>
+                        <div class="dropdown-menu">
+                            <div class="container product-categories fluids">
+                                <ul class="product-categories-list supplies row">
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="products-category.html">Motorové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="products-subcategory.html">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Převodové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Plastická maziva</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Autokosmetika</a>
+                        <div class="dropdown-menu">
+                            <div class="container product-categories fluids">
+                                <ul class="product-categories-list cosmetics row">
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="products-category.html">Motorové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="products-subcategory.html">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Převodové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Plastická maziva</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Servisní přípravky</a>
+                        <div class="dropdown-menu">
+                            <div class="container product-categories fluids">
+                                <ul class="product-categories-list tools row">
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="products-category.html">Motorové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="products-subcategory.html">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Převodové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Plastická maziva</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" data-toggle="dropdown" aria-expanded="false">Doplňkový sortiment</a>
+                        <div class="dropdown-menu">
+                            <div class="container product-categories fluids">
+                                <ul class="product-categories-list oils row">
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="products-category.html">Motorové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="products-subcategory.html">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Převodové oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                            <!-- Go to main category -->
+                                            <a class="more-tags" href="#">...</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Plastická maziva</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Ostatní oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Osobní vozidla</a>
+                                            <a href="#">Nákladní vozidla</a>
+                                            <a href="#">Motocyklové oleje</a>
+                                            <a href="#">Zahradní technika</a>
+                                            <a href="#">Zemědělská technika</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Mazací spreje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                    <li class="col-md-4">
+                                        <a class="main-category" href="#">Hydraulické oleje</a>
+                                        <div class="product-tags">
+                                            <a href="#">Manuální převodovky</a>
+                                            <a href="#">Automatické převodovky</a>
+                                            <a href="#">Univerzální traktorový</a>
+                                            <a href="#">Nápravy</a>
+                                            <a href="#">diferenciály, hypoidní</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- BREADCRUMBS -->
+    <nav class="df-breadcrumbs stripes-bg d-none d-md-block">
+        <div class="container no-padding">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="home" href="#"></a></li>
+                <li class="breadcrumb-item"><a href="#">Košík</a></li>
+                <li class="breadcrumb-item active">Poslední objednávky</li>
+            </ol>
+        </div>
+    </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<div class="content-wrapper">
+    <section class="df-product-slider stripes-bg d-none d-md-block">
+        <div id="myCarousel" class="container no-padding carousel slide" data-ride="carousel">
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active carousel-item">
+                    <img src="DFTerminal/media/DFTerminal/Images/slider-bg1.jpg"/>
+                </div>
+                <!-- End Item -->
+                <div class="item carousel-item">
+                    <img src="DFTerminal/media/DFTerminal/Images/slider-bg1.jpg"/>
+                    <div class="carousel-caption">
+                        <h4><a href="#">Reklamní sdělení 2</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                            voluptua. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                            diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                        </p>
+                    </div>
+                </div>
+                <!-- End Item -->
+                <div class="item carousel-item">
+                    <img src="http://placehold.it/795x300/999999/cccccc"/>
+                </div>
+                <!-- End Item -->
+                <div class="item carousel-item">
+                    <img src="DFTerminal/media/DFTerminal/Images/slider-bg1.jpg"/>
+                </div>
+                <!-- End Item -->
+                <div class="item carousel-item">
+                    <img src="http://placehold.it/795x300/999999/cccccc"/>
+                    <div class="carousel-caption">
+                        <h4><a href="#">Reklamní sdělení 5</a></h4>
+                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+                            eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+                            voluptua.
+                        </p>
+                    </div>
+                </div>
+                <!-- End Item -->
+            </div>
+            <!-- End Carousel Inner -->
+            <div class="row">
+                <ul class="list-group col-md-3 no-padding">
+                    <li data-target="#myCarousel" data-slide-to="0" class="list-group-item active">
+                        <span class="align-bottom">Reklamní sdělení 1</span>
+                    </li>
+                    <li data-target="#myCarousel" data-slide-to="1" class="list-group-item">
+                        <span class="align-bottom">Reklamní sdělení 2</span>
+                    </li>
+                    <li data-target="#myCarousel" data-slide-to="2" class="list-group-item">
+                        <span class="align-bottom">Reklamní sdělení 3</span>
+                    </li>
+                    <li data-target="#myCarousel" data-slide-to="3" class="list-group-item">
+                        <span class="align-bottom">Reklamní sdělení 4</span>
+                    </li>
+                    <li data-target="#myCarousel" data-slide-to="4" class="list-group-item">
+                        <span class="align-bottom">Reklamní sdělení 5</span>
+                    </li>
+                </ul>
+            </div>
+            <!-- Controls -->
+            <div class="carousel-controls">
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="recently-ordered stripes-bg">
+        <div class="container">
+            <div class="row text-left">
+                <div class="col-lg-12">
+                    <h2 class="middle-line">Poslední objednávky</h2>
+                    <div class="row">
+                        <div class="col-xl-3 col-sm-6 col-lg-4">
+                            <h4 class="font-weight-bold">Objednávka č. 987654321</h4>
+                            <p>Objednáno: <span class="float-right"> 11.12.2020</span></p>
+                            <p>Celkové množství: <span class="float-right font-weight-bold"> 2 320 Ks</span></p>
+                            <p>Celková cena bez DPH: <span class="float-right font-weight-bold"> 2 320 Kč</span></p>
+                            <a href="#" class="btn btn-primary btn-blue btn-small btn-detail">
+                                <i class="icon-lupa"></i>
+                            </a>
+                            <input class="btn btn-primary btn-red" type="submit" value="Objednat znovu">
+                        </div>
+                        <div class="col-xl-3 col-sm-6 col-lg-4">
+                            <h4 class="font-weight-bold">Objednávka č. 987654321</h4>
+                            <p>Objednáno: <span class="float-right"> 11.12.2020</span></p>
+                            <p>Celkové množství: <span class="float-right font-weight-bold"> 2 320 Ks</span></p>
+                            <p>Celková cena bez DPH: <span class="float-right font-weight-bold"> 2 320 Kč</span></p>
+                            <a href="#" class="btn btn-primary btn-blue btn-small btn-detail">
+                                <i class="icon-lupa"></i>
+                            </a>
+                            <input class="btn btn-primary btn-red" type="submit" value="Objednat znovu">
+                        </div>
+                        <div class="col-sm-6 col-lg-4 col-xl-3">
+                            <h4 class="font-weight-bold">Objednávka č. 987654321</h4>
+                            <p>Objednáno: <span class="float-right"> 11.12.2020</span></p>
+                            <p>Celkové množství: <span class="float-right font-weight-bold"> 2 320 Ks</span></p>
+                            <p>Celková cena bez DPH: <span class="float-right font-weight-bold"> 2 320 Kč</span></p>
+                            <a href="#" class="btn btn-primary btn-blue btn-small btn-detail">
+                                <i class="icon-lupa"></i>
+                            </a>
+                            <input class="btn btn-primary btn-red" type="submit" value="Objednat znovu">
+                        </div>
+                        <div class="col-sm-6 col-xl-3">
+                            <h4 class="font-weight-bold">Objednávka č. 987654321</h4>
+                            <p>Objednáno: <span class="float-right"> 11.12.2020</span></p>
+                            <p>Celkové množství: <span class="float-right font-weight-bold"> 2 320 Ks</span></p>
+                            <p>Celková cena bez DPH: <span class="float-right font-weight-bold"> 2 320 Kč</span></p>
+                            <a href="#" class="btn btn-primary btn-blue btn-small btn-detail">
+                                <i class="icon-lupa"></i>
+                            </a>
+                            <input class="btn btn-primary btn-red" type="submit" value="Objednat znovu">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="howto-order stripes-bg">
+        <div class="container">
+            <div class="row text-left">
+                <div class="col-md-6">
+                    <h2 class="middle-line">Jak vytvořit objednávku?</h2>
+                    <ol>
+                        <li>Vyhledejte požadované zboží</li>
+                        <li>Zapište do políčka "Objednat kartonů" množství u zboží, které chcete objednat</li>
+                        <li>Vložte do objednávky vybrané zboží kliknutím na tlačítko
+                            <div class="d-inline"><img src="DFTerminal/media/DFTerminal/Images/help-img1.png" alt=""/></div>
+                            nebo
+                            <div class="d-inline bg-warning"><img src="DFTerminal/media/DFTerminal/Images/help-img2.png" alt=""/></div>
+                        </li>
+                        <li>Přepněte se do objednávky prostřednictvím tlačítka
+                            <div class="d-inline"><img src="DFTerminal/media/DFTerminal/Images/help-img3.png" alt=""/></div>
+                            a vyplňte hlavičku objednávky:<br/>
+                            <strong>Termín</strong> - zde můžete nastavit pozdější termín dodání - pro nastavení
+                            použijte tlačítko vpravo vedle políčka pro datum.<br/>
+                            <strong>Platba</strong> - pokud platíte převodním příkazem je možno změnit způsob platby na
+                            "V hotovosti".<br/>
+                            <strong>Vystavil - vyplňte svoje</strong> jméno a příjmení tak, abychom Vás mohli případně
+                            kontaktovat.<br/>
+                            <strong>Poznámka pro dodavatele</strong> - vyplňte v případě, že součástí objednávky má být
+                            Vaše sdělení.<br/>
+                            <strong>Poznámka pro zákazníka</strong> - zde si můžete vyplnit Vaši poznámku - nebude
+                            odeslána s objednávkou!<br/>
+                            <strong>Vaše číslo objednávky</strong> - zde si můžete vyplnit Vaše číslo objednávky, které
+                            bude při dodávce vyplněno na dodacím listu.
+                        </li>
+                        <li>Odešlete objednávku kliknutím na stejnojmenné tlačítko - systém Vás vyzve k závěrečné
+                            kontrole.
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="middle-line">Jak vyhledat konkrétní zboží?</h2>
+                    <ul>
+                        <li>Výběr z horního panelu – ukažte myší na některou z hlavních kategorií, zobrazí si roletka s
+                            detailním roztříděním vybrané kategorie.
+                        </li>
+                        <li>Výběr z možností z horní části levého panelu – sekce "Obecná filtrace", kde je možno položky
+                            filtrovat dle následujících možností:
+                        </li>
+                        <li class="list-unstyled">
+                            <ul class="list-unstyled legend">
+                                <li>
+                                    <span class="legend-badge goods-like"></span>
+                                    <strong>Oblíbené zboží</strong> - obsahuje zboží, které jste si sami dříve označili
+                                    jako
+                                    „oblíbené“
+                                </li>
+                                <li>
+                                    <span class="legend-badge goods-taken"></span>
+                                    <strong>Odebírané zboží</strong> - obsahuje zboží, které jste si u nás v průběhu
+                                    posledních 365 dní objednali.
+                                </li>
+                                <li>
+                                    <span class="legend-badge sale"></span>
+                                    <strong>Akce</strong> - obsahuje zboží, u kterého aktuálně probíhá prodejní akce.
+                                </li>
+                                <li>
+                                    <span class="legend-badge new"></span>
+                                    <strong>Novinky</strong> - obsahuje nové zboží v naší nabídce.</li>
+                                <li>
+                                    <span class="legend-badge sold-out"></span>
+                                    <strong>Výprodej</strong> - obsahuje zboží, které se doprodává na konci sezóny nebo
+                                    zcela
+                                    končí.
+                                </li>
+                                <li>
+                                    <span class="legend-badge recommended"></span>
+                                    <strong>Doporučujeme</strong> - obsahuje zboží, u kterého Vám na základě našich
+                                    evidencí
+                                    hrozí vyprodání zásoby.
+                                </li>
+                                <li>
+                                    <span class="legend-badge in-stock"></span>
+                                    <strong>Skladem</strong> - obsahuje zboží, u kterého máme k dispozici nenulovou
+                                    skladovou
+                                    zásobu
+                                </li>
+                            </ul>
+                        </li>
+                        <li>Výběr z levého panelu - sekce "KATEGORIE", kde jsou položky uspořádány v kategoriích -
+                            typicky
+                            dle účelového členění.
+                        </li>
+                        <li>Výběr z levého spodního panelu - "Dle značky", kde jsou položky uspořádány dle značek.</li>
+                        <li>Výběr z levého spodního panelu - "Dle řady", kde jsou položky uspořádány dle vybrané
+                            značky.
+                        </li>
+                        <li>Vyhledání zboží prostřednictvím vyhledávače v levém horním panelu "VYHLEDÁVÁNÍ ZBOŽÍ" Zde
+                            vložíte část názvu nebo kód zboží, které hledáte a potvrdíte tlačítkem "OK".
+                        </li>
+                        <li>Vyhledání zboží v již dříve odeslaných objednávkách. V tomto případě vložíte zboží do
+                            objednávky tak, že zaškrtnete políčko ve sloupci "Objednat".
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <!--Footer homepage-->
+    <section class="footer-homepage">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-lg-4 contact">
+                    <h3 class="text-uppercase">Kontakt</h3>
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="icon-location"></i>
+                            <span>DF Partner s.r.o., č.p. 165, 736 15 Neubuz</span>
+                        </li>
+                        <li>
+                            <i class="icon-phone"></i>
+                            <span>+420 575 571 111</span>
+                        </li>
+                        <li>
+                            <i class="icon-mail"></i>
+                            <span>xxxx@xxxx.cz</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-12 col-lg-4 map-link">
+                    <h3 class="text-uppercase">Mapa Stránek</h3>
+                    <ul class="list-unstyled selector">
+                        <li><a href="user-data.html">Uživatelské údaje</a></li>
+                        <li><a href="orders-completed.html">Proběhlé objednávky</a></li>
+                        <li><a href="#">Pohledávky</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                        <li><a href="#">Ke stažení</a></li>
+                        <li><a href="#" data-toggle="modal" data-target=".bd-example-modal-lg">Obchodní podmínky</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-12 col-lg-4 newsletter">
+                    <h3 class="text-uppercase">Odběr novinek</h3>
+                    <p>Zaregistrujte se k odběru našeho zpravodaje a budeme vám posílat novinky a zajímavosti ze
+                        světa DF Partner.</p>
+                    <div class="form-group row">
+                        <div class="col-lg-12 col-xl-8">
+                            <input class="form-control" type="email" placeholder="Vaše emailová adresa"/>
+                        </div>
+                        <div class="col-lg-12 col-xl-4">
+                            <input class="btn btn-primary btn-blue btn-block" type="submit" value="Přihlásit"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Footer logo-->
+    <section class="footer-logo">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <a href="#">
+                        <img class="img-responsive" src="DFTerminal/media/DFTerminal/Images/DF-Logo_small.png" alt=""/>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Footer copyright-->
+    <section class="footer-copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <p>copyright © 2017 DF Partner, všechna práva vyhrazena</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+<script src="js/jquery-3.2.1.slim.min.js"></script>
+<script src="js/popper.1.11.0.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- Only for homepage.html -->
+<script src="js/carousel.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

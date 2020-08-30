@@ -1,0 +1,167 @@
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+@font-face {
+    font-family: 'icomoon';
+    src: url("../fonts/icomoon.eot?a0f1a");
+    src: url("../fonts/icomoon.eot?a0f1a#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?a0f1a") format("truetype"), url("../fonts/icomoon.woff?a0f1a") format("woff"), url("../fonts/icomoon.svg?a0f1a#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+@font-face {
+    font-family: 'icomoon3';
+    src: url("../fonts/icomoon3.eot?a0f1a");
+    src: url("../fonts/icomoon3.eot?a0f1a#iefix") format("embedded-opentype"), url("../fonts/icomoon3.ttf?a0f1a") format("truetype"), url("../fonts/icomoon3.woff?a0f1a") format("woff"), url("../fonts/icomoon3.svg?a0f1a#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal
+}
+
+[class^="icon-"],
+[class*=" icon-"],
+.icomoon-font {
+    font-family: 'icomoon', sans-serif !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+[class^="icon3-"],
+[class*=" icon3-"],
+.icomoon-font {
+    font-family: 'icomoon3', sans-serif !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale
+}
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+    font-family: 'FontAwesome', sans-serif;
+}
+
+.fontawesome-list:before,
+.fontawesome-th-large:before {
+    font-size: 20px;
+}
+
+.icon-accessibility:before {
+    content: "\e901"
+}
+
+.icon-arrow:before {
+    content: "\e902"
+}
+
+.icon-calendar:before {
+    content: "\e903"
+}
+
+.icon-certificate:before {
+    content: "\e904"
+}
+
+.icon-facebook:before {
+    content: "\e905"
+}
+
+.icon-location:before {
+    content: "\e906"
+}
+
+.icon-mail:before {
+    content: "\e907"
+}
+
+.icon-menu_close:before {
+    content: "\e908"
+}
+
+.icon-menu:before {
+    content: "\e909"
+}
+
+.icon-production:before {
+    content: "\e90a"
+}
+
+.icon-produkty_doplnky:before {
+    content: "\e90b"
+}
+
+.icon-produkty_kapaliny:before {
+    content: "\e90c"
+}
+
+.icon-produkty_kosmetika:before {
+    content: "\e90d"
+}
+
+.icon-produkty_oleje:before {
+    content: "\e90e"
+}
+
+.icon-produkty_ostatni:before {
+    content: "\e90f"
+}
+
+.icon-produkty_prislusenstvi:before {
+    content: "\e910"
+}
+
+.icon-produkty_servisni:before {
+    content: "\e911"
+}
+
+.icon-produkty_vse:before {
+    content: "\e912"
+}
+
+.icon-quality:before {
+    content: "\e913"
+}
+
+.icon-redirect:before {
+    content: "\e914"
+}
+
+.icon-dfparner_logo:before {
+    content: "\e915"
+}
+
+.icon-checkmark:before {
+    content: "\e916"
+}
+
+.icon-thumb-up:before {
+    content: "\e917"
+}
+
+.icon-phone:before {
+    content: "\e918"
+}
+
+.icon-lupa:before {
+    content: "\e919"
+}
+
+.icon-20:before {
+    content: "\e91a"
+}
+
+.icon-menu_arrow:before {
+    content: "\e91b"
+}
+
+.icon-basket:before {
+    content: "\e80e"
+}
